@@ -6,9 +6,13 @@ require('dotenv').config();
 
 const { PORT } = process.env;
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+const todoRouter = require('./routes/todoRoute');
+
+const errorMiddleware = require('./src/middlewares/errorHandler');
+
+app.use(todoRouter);
+
+app.use(errorMiddleware);
 
 app.listen(PORT, () => {
   console.log(`Conectado na porta: ${PORT}`);
