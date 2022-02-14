@@ -1,0 +1,24 @@
+{
+  "name": "to_do_back_end",
+  "version": "1.0.0",
+  "description": "Projeto baseado em uma lista de tarefa, onde será usado o modelo MSC e também CRUD",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --no-inline-config --ext .js,.jsx --no-error-on-unmatched-pattern -c .eslintrc.json .",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Filipe Augusto",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "eslint-config-trybe-backend": "^1.0.4",
+    "express": "^4.17.2",
+    "mongodb": "^4.3.1"
+  }
+}
