@@ -1,9 +1,9 @@
 const express = require('express');
 
+const { controllerCreateTodo } = require('../src/controller/todoControllers');
+
 const todoRoute = express.Router();
 
-todoRoute.get('/', () => {
-  console.log('Funcionou');
-});
+todoRoute.post('/todo', controllerCreateTodo);
 
 module.exports = todoRoute;
