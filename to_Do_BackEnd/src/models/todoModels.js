@@ -9,6 +9,14 @@ const modelCreateToDo = async (todo) => {
   return ObjectId(insertedId);
 };
 
+const modelGetAllTodo = async () => {
+  const conn = await connect();
+  const result = await conn.collection(COLLECTION).find({}).toArray();
+
+  return result;
+};
+
 module.exports = {
   modelCreateToDo,
+  modelGetAllTodo,
 };
