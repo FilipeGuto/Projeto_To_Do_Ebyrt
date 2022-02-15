@@ -1,5 +1,7 @@
-const connect = require('./connection');
 const { ObjectId } = require('mongodb');
+
+const connect = require('./connection');
+
 const COLLECTION = 'to-do-collection';
 
 const modelCreateToDo = async (todo) => {
@@ -16,7 +18,18 @@ const modelGetAllTodo = async () => {
   return result;
 };
 
+const modelUpdateTodo = async (id, todo) => {
+  const conn = await connect();
+  const result = await conn.collection(COLLECTION).updateOne(
+    { _id: ObjectId(id) },
+    { $set: { ...todo } },
+  );
+
+  return result;
+}
+
 module.exports = {
   modelCreateToDo,
   modelGetAllTodo,
+  modelUpdateTodo,
 };

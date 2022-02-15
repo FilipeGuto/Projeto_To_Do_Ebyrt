@@ -1,6 +1,7 @@
 const { 
   serviceCreateTodo,
   serviceGetAllTodo,
+  serviceUpdateTodo,
 } = require('../service/todoServices');
 const { created, sucess } = require('../../utils/dictionary/statusCode');
 
@@ -26,7 +27,20 @@ const controllerGetAllTodo = async (req, res, next) => {
   }
 };
 
+const controllerUpdateTodo = async (req, res, next) => {
+try {
+    const { id } = req.params;
+    const updateTodo = await serviceUpdateTodo(id, req.body);
+
+    return res.status(sucess).json(updateTodo);
+} catch (error) {
+  console.log(`UPDATE TODO -> ${error.message}`);
+    return next(error);
+}
+};
+
 module.exports = {
   controllerCreateTodo,
   controllerGetAllTodo,
+  controllerUpdateTodo,
 };

@@ -1,6 +1,7 @@
 const { 
   modelCreateToDo,
   modelGetAllTodo,
+  modelUpdateTodo,
 } = require('../models/todoModels');
 
 const serviceCreateTodo = async (todo) => {
@@ -15,7 +16,17 @@ const serviceGetAllTodo = async () => {
   return allTodo;
 };
 
+const serviceUpdateTodo = async (id, updateTodo) => {
+  await modelUpdateTodo(id, updateTodo);
+
+  return {
+    _id: id,
+    todo: updateTodo.todo,
+  };
+};
+
 module.exports = {
   serviceCreateTodo,
   serviceGetAllTodo,
+  serviceUpdateTodo,
 };
