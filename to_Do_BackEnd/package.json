@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "Projeto baseado em uma lista de tarefa, onde será usado o modelo MSC e também CRUD",
   "main": "app.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/integration/test_To_Do.js node_modules/mocha/bin/mocha",
     "lint": "eslint --no-inline-config --ext .js,.jsx --no-error-on-unmatched-pattern -c .eslintrc.json .",
     "start": "node app.js",
     "dev": "nodemon app.js"
@@ -22,5 +19,10 @@
     "express": "^4.17.2",
     "mongodb": "^4.3.1",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.0"
   }
 }

@@ -1,9 +1,9 @@
 const { modelCreateToDo } = require('../models/todoModels');
 
 const serviceCreateTodo = async (todo) => {
-  const newTodo = await modelCreateToDo(todo);
+  await modelCreateToDo(todo);
 
-  return { newTodo }
+  return todo;
 };
 
 module.exports = {

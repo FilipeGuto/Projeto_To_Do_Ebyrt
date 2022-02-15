@@ -6,7 +6,6 @@ const modelCreateToDo = async (todo) => {
   const conn = await connect();
   const { insertedId } = await conn.collection(COLLECTION).insertOne(todo);
 
-  console.log(insertedId);
   return ObjectId(insertedId);
 };
 
