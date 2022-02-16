@@ -1,19 +1,31 @@
 import './App.css';
 import { useState, useEffect } from "react";
 import List from "../src/Components/List";
+const URL = "http://localhost:3000/todo";
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
   function getData() {
-    fetch('http://localhost:3000/todo', {method: "GET"})
-    .then(response => response.json())
-    .then(data => setTasks(data));
-  }
+    fetch(URL, { method: "GET" })
+      .then(response => response.json())
+      .then(data => setTasks(data));
+  };
+
+  function insertTask() {
+    fetch(URL,
+      {
+        method: "POST",
+        headers: { 'Content-type': "application/json" },
+        body: JSON.stringify({ "tarefa": "", "active": true })
+      })
+      .then(response => response.json())
+      .then(data => getData(data));
+  };
 
   useEffect(() => {
     getData();
-  },[])
+  }, [])
 
   return (
     <div className="wrapper">
@@ -27,7 +39,7 @@ function App() {
       <button>Pendentes</button>
       <button>Concluidos</button>
 
-      <button>Criar tarefa</button>
+      <button onClick={insertTask}>Criar tarefa</button>
 
     </div>
   );
