@@ -28,8 +28,16 @@ const modelUpdateTodo = async (id, todo) => {
   return result;
 }
 
+const modelDeleteTodo = async (id) => {
+  const conn = await connect();
+  const result = await conn.collection(COLLECTION).deleteOne({ _id: ObjectId(id) });
+
+  return result;
+};
+
 module.exports = {
   modelCreateToDo,
   modelGetAllTodo,
   modelUpdateTodo,
+  modelDeleteTodo,
 };

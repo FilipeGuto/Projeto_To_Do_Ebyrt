@@ -50,7 +50,7 @@ describe('Lista de todas tarefas', () => {
 		it('Deve retornar todas tarefas e status:200', done => {
 			chai.request(URL)
 				.get('/todo')
-				.end((err, res) => {
+				.end((_err, res) => {
 					res.should.have.status(200);
 					done();
 				});
@@ -58,7 +58,7 @@ describe('Lista de todas tarefas', () => {
 		it('As tarefas retornadas devem estar dentro de um array', done => {
 			chai.request(URL)
 				.get('/todo')
-				.end((err, res) => {
+				.end((_err, res) => {
 					res.body.should.be.a('array');
 					done();
 				});
