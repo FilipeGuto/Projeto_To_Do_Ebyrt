@@ -8,9 +8,11 @@ const {
 const serviceCreateTodo = async (todo) => {
   await modelCreateToDo(todo);
 
-  return { 
-    sucesso: 'tarefa criada',
-  };
+  // return { 
+  //   sucesso: 'tarefa criada',
+  // };
+
+  return todo;
 };
 
 const serviceGetAllTodo = async () => {
@@ -19,12 +21,12 @@ const serviceGetAllTodo = async () => {
   return allTodo;
 };
 
-const serviceUpdateTodo = async (id, updateTodo) => {
-  await modelUpdateTodo(id, updateTodo);
+const serviceUpdateTodo = async (id, todo) => {
+  await modelUpdateTodo(id, todo);
 
   return {
     _id: id,
-    tarefa: updateTodo.tarefa,
+    tarefa: todo.tarefa,
   };
 };
 
