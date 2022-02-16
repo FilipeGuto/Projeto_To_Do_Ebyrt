@@ -8,10 +8,6 @@ const {
 const serviceCreateTodo = async (todo) => {
   await modelCreateToDo(todo);
 
-  // return { 
-  //   sucesso: 'tarefa criada',
-  // };
-
   return todo;
 };
 

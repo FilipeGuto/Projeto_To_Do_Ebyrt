@@ -45,7 +45,7 @@ const controllerDeleteTodo = async (req, res, next) => {
     const { id } = req.params;
     const todo = await serviceDeleteTodo(id, req.body);
 
-    return res.status(200).json(todo);
+    return res.status(sucess).json(todo);
   } catch (error) {
     console.log(`DELETE TODO -> ${error.message}`);
     next(error);

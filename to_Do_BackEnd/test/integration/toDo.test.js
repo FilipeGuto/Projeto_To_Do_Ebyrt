@@ -102,3 +102,16 @@ describe('Atualiza uma tarefa', () => {
 		});
 	});
 });
+
+describe('Deleta uma tarefa', () => {
+	describe('DELETE /todo/:id', () => {
+		it('Deve deletar uma tarefa e retornar status:200', done => {
+			chai.request(URL)
+				.delete('/todo/123456789abcdef987654321')
+				.end((_err, res) => {
+					res.should.have.status(200);
+					done();
+				});
+		});
+	});
+});
