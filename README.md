@@ -77,5 +77,7 @@ Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a c
     <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"> https://github.com/FilipeGuto
   </div>
   <br/>
-  Email: filipeguto95@gmail.com
+     <div style="display: flex;align-items: center;">
+    <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/email/email-original.svg"> filipeguto95@gmail.com
+  </div>
 <br/>
