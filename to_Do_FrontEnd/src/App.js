@@ -23,6 +23,28 @@ function App() {
       .then(data => getData(data));
   };
 
+  function updateTask(task) {
+    fetch(URL,
+      {
+        method: "PUT",
+        headers: { 'Content-type': "application/json" },
+        body: JSON.stringify(task)
+      })
+      .then(response => response.json())
+      .then(data => getData(data));
+  };
+
+  function deleteTask(task) {
+    fetch(`http://localhost:3000/todo/${task._id}`,
+      {
+        method: "DELETE",
+        headers: { 'Content-type': "application/json" },
+        body: JSON.stringify(task)
+      })
+      .then(response => response.json())
+      .then(() => getData());
+  };
+
   useEffect(() => {
     getData();
   }, [])
@@ -32,7 +54,7 @@ function App() {
       <h1>Lista de Tarefa</h1>
 
       {tasks.map(task => {
-        return <List task={task} />
+        return <List task={task} updateTask={updateTask} deleteTask={deleteTask} />
       })}
 
       <button>Todos</button>

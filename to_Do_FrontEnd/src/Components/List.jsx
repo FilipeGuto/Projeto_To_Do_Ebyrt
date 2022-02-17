@@ -1,9 +1,11 @@
-function List({ task }) {
+function List({ task, updateTask, deleteTask }) {
   return (
   <div className="row">
-    <input type="checkbox" />
+    <input 
+    type="checkbox"
+    onClick={() => { updateTask({ ...task }) }} />
     <span>{task.tarefa}</span>
-    <button>Apagar</button>
+    <button onClick={() => {deleteTask(task)}}>Apagar</button>
   </div>
   );
 };
