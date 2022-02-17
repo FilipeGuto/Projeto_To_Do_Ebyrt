@@ -7,7 +7,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   function getData() {
-    fetch(URL, { method: "GET" })
+    fetch(URL, { method: "GET", })
       .then(response => response.json())
       .then(data => setTasks(data));
   };
@@ -20,18 +20,21 @@ function App() {
         body: JSON.stringify({ "tarefa": "", "active": true })
       })
       .then(response => response.json())
-      .then(data => getData(data));
+      .then(() => getData());
   };
 
   function updateTask(task) {
-    fetch(URL,
+    fetch(`http://localhost:3000/todo/${task._id}`,
       {
         method: "PUT",
-        headers: { 'Content-type': "application/json" },
+        headers: {
+          'Content-type': "application/json",
+          'Accept': "application/json"
+        },
         body: JSON.stringify(task)
       })
       .then(response => response.json())
-      .then(data => getData(data));
+      .then(() => getData());
   };
 
   function deleteTask(task) {
@@ -39,7 +42,6 @@ function App() {
       {
         method: "DELETE",
         headers: { 'Content-type': "application/json" },
-        body: JSON.stringify(task)
       })
       .then(response => response.json())
       .then(() => getData());
@@ -54,7 +56,7 @@ function App() {
       <h1>Lista de Tarefa</h1>
 
       {tasks.map(task => {
-        return <List task={task} updateTask={updateTask} deleteTask={deleteTask} />
+        return <List key={task._id} task={task} updateTask={updateTask} deleteTask={deleteTask} />
       })}
 
       <button>Todos</button>
