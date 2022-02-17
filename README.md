@@ -70,16 +70,12 @@ Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a c
   <div>
     <h2> Filipe guto </h2>
   <div style="display: flex; align-items: center;">
-    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="width:20px;"/> https://www.linkedin.com/in/filipeguto/
+    <img align="center" alt="Linkedin" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg">https://www.linkedin.com/in/filipeguto/
   </div>
   <br/>
   <div style="display: flex;align-items: center;">
-    <img src="./images/github_logo.png" alt="Github" style="width:20px;"/> https://github.com/FilipeGuto
+    <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"> https://github.com/FilipeGuto
   </div>
-   <div>
-    <img align="center" alt="Linkedin" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg">
-    <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-   </div>
   <br/>
   Email: filipeguto95@gmail.com
 <br/>
