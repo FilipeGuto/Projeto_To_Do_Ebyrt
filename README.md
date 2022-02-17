@@ -21,9 +21,17 @@ Copie o ssh do projeto `git@github.com:FilipeGuto/Projeto_To_Do_Ebyrt.git`
   * `git clone git@github.com:FilipeGuto/Projeto_To_Do_Ebyrt.git`
   * `cd Projeto_To_Do_Ebyrt`
   * `npm install`
-  * `npm start`
+
+
+* Na pasta de backend voce pode utilizar o comando:
+
+* `npm start`
 
   A aplicação está configurada para rodar na porta local 3000.
+  
+* Na pasta de frontend voce pode utilizar o comando:
+
+* `npm start`
 
 ## Back-end
 
