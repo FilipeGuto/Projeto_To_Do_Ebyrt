@@ -5,6 +5,7 @@ const URL = "http://localhost:3000/todo";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [filterTask, setFilterTask] = useState({ filter: false, active: false });
 
   function getData() {
     fetch(URL, { method: "GET", })
@@ -51,20 +52,28 @@ function App() {
     getData();
   }, [])
 
+  const taskShow = filterTask.filter ? tasks.filter(task => task.active === filterTask.active) : tasks
+
   return (
     <div className="wrapper">
-      <h1>Lista de Tarefa</h1>
+      <div className='to-do-List'>
+        <h1>Lista de Tarefa</h1>
 
-      {tasks.map(task => {
-        return <List key={task._id} task={task} updateTask={updateTask} deleteTask={deleteTask} />
-      })}
+        {taskShow.map(task => {
+          return <List key={task._id} task={task} updateTask={updateTask} deleteTask={deleteTask} />
+        })}
 
-      <button>Todos</button>
-      <button>Pendentes</button>
-      <button>Concluidos</button>
+        <div className='button-row'>
+        <button onClick={() => setFilterTask({ filter: false })}>Todos</button>
+        <button onClick={() => setFilterTask({ filter: true, active: true })}>Pendentes</button>
+        <button onClick={() => setFilterTask({ filter: true, active: false })}>Concluidos</button>
+        </div>
 
-      <button onClick={insertTask}>Criar tarefa</button>
+        <div className='button-row'>
+        <button onClick={insertTask}>Criar tarefa</button>
+        </div>
 
+      </div>
     </div>
   );
 }
