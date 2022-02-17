@@ -78,6 +78,6 @@ Foi utilizado para o desenvolvimento desse projeto o NodeJS com Express para a c
   </div>
   <br/>
      <div style="display: flex;align-items: center;">
-    <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/email/email-original.svg"> filipeguto95@gmail.com
+    <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gmail/gmail-original.svg"> filipeguto95@gmail.com
   </div>
 <br/>
