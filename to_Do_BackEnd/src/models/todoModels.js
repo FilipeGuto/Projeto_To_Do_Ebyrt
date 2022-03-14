@@ -22,7 +22,7 @@ const modelUpdateTodo = async (id, todo) => {
   const conn = await connect();
   const result = await conn.collection(COLLECTION).updateOne(
     { _id: ObjectId(id) },
-    { $set: { ...todo } },
+    { $set: { tarefa: todo.tarefa, active: todo.active, edit: todo.edit } },
   );
 
   return result;
