@@ -12,23 +12,31 @@ function List({ task, updateTask, deleteTask }) {
           updateTask({ ...task, active: !task.active });
         }}
       />
-      {((task.edit) || (task.tarefa === "")) ? (
-        <input 
-        type="text"
-        placeholder={task.tarefa}
-        onChange={(event) => {setText(event.target.value)}}
-        onBlur={() => {updateTask({ ...task, tarefa: text })}}
+      {task.edit || task.tarefa === "" ? (
+        <input
+          type="text"
+          placeholder={task.tarefa}
+          onChange={(event) => {
+            setText(event.target.value);
+          }}
         />
-        ) :
+      ) : (
         <span
-        onClick={() => {
-          updateTask({ ...task, edit: true });
+          onClick={() => {
+            updateTask({ ...task, edit: true });
           }}
           style={task.active ? {} : { textDecoration: "line-through" }}
         >
           {task.tarefa}
         </span>
-      }
+      )}
+      <button
+        onClick={() => {
+          updateTask({ ...task, tarefa: text, edit: false});
+        }}
+      >
+        OK
+      </button>
       <button
         onClick={() => {
           deleteTask(task);
